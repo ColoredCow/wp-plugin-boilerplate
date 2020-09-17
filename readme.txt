@@ -8,11 +8,11 @@ Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-A boilerplate to create WordPress plugin with rapid assets compilation using grunt. 
+Yet another boilerplate to create WordPress plugin.
 
 == Description ==
 
-A boilerplate to create WordPress plugin.
+A boilerplate to create WordPress plugin. Provides rapid assets compilation using Grunt.
 
 
 == Installation & Getting started ==

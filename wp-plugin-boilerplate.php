@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Plugin Boilerplate
  * Plugin URI: https://coloredcow.com/
- * Description: A boilerplate to create WordPress plugin.
+ * Description: Yet another boilerplate to create WordPress plugin.
  * Version: 1.0.0
  * Author: ColoredCow
  * Author URI: https://coloredcow.com

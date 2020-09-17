@@ -1,0 +1,7 @@
+{
+  "name": "abhishek-pokhriyal/wp-plugin-boilerplate",
+  "description": "A boilerplate to create WordPress plugin.",
+  "require": {
+    "php": "^7.2"
+  }
+}
