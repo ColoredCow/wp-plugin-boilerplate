@@ -1,7 +1,15 @@
 {
-  "name": "abhishek-pokhriyal/wp-plugin-boilerplate",
-  "description": "A boilerplate to create WordPress plugin.",
-  "require": {
-    "php": "^7.2"
-  }
+    "name": "abhishek-pokhriyal/wp-plugin-boilerplate",
+    "description": "A boilerplate to create WordPress plugin.",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": "^7.2"
+    },
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "abhishek-pokhriyal",
+            "email": "pokhi@coloredcow.com"
+        }
+    ]
 }
