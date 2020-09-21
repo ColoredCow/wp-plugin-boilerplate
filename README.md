@@ -9,6 +9,28 @@ A boilerplate to create WordPress plugin with rapid assets compilation using Gru
 
 ## Installation & getting started
 
+### Via `composer`
+
+1. In your plugin's (empty) root directory, create a `composer.json` file and paste the following contents in it.
+
+   ```json
+   {
+     "require": {
+       "composer/installers": "1.9.0",
+       "abhishek-pokhriyal/wp-plugin-boilerplate": "^1.0"
+     },
+     "extra": {
+       "installer-paths": {
+       "./" : ["abhishek-pokhriyal/wp-plugin-boilerplate"]
+       }
+     }
+   }
+   ```
+
+1. Run `compser install`. This will put the boilerplate code in the plugin's root directory (it will also overwrite the contents of `composer.json` file created in the previous step.)
+
+### Manually
+
 1. Clone the repository inside your `wp-content/plugins/` directory.
    ```bash
    git clone https://github.com/abhishek-pokhriyal/wp-plugin-boilerplate.git
