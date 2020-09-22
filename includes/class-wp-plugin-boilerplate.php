@@ -22,7 +22,7 @@ final class Wp_Plugin_Boilerplate {
 	 *
 	 * @var string
 	 */
-	public $version = '1.0.0';
+	public $version = '1.2.0';
 
 	/**
 	 * Wp_Plugin_Boilerplate Schema version.
@@ -31,7 +31,7 @@ final class Wp_Plugin_Boilerplate {
 	 *
 	 * @var string
 	 */
-	public $db_version = '100';
+	public $db_version = '120';
 
 	/**
 	 * The single instance of the class.
@@ -75,6 +75,7 @@ final class Wp_Plugin_Boilerplate {
 	private function init_hooks() {
 		register_activation_hook( WPB_PLUGIN_FILE, array( 'WPB_Install', 'install' ) );
 
+		add_action( 'init', array( $this, 'init' ), 0 );
 		add_action( 'init', array( 'WPB_Shortcodes', 'init' ) );
 	}
 
@@ -154,6 +155,8 @@ final class Wp_Plugin_Boilerplate {
 		// Load Abstract classes.
 
 		// Load Core classes.
+		include_once WPB_ABSPATH . 'includes/class-wpb-install.php';
+		include_once WPB_ABSPATH . 'includes/class-wpb-shortcodes.php';
 
 		// Load Data stores - used to store and retrieve CRUD object data from the database.
 
@@ -191,15 +194,26 @@ final class Wp_Plugin_Boilerplate {
 	 * Init WP Plugin Boilerplate when WordPress Initialises.
 	 */
 	public function init() {
-		// Before init action.
-		do_action( 'before_wp_plugin_boilerplate_init' );
+		// Set up localisation.
+		$this->load_plugin_textdomain();
+	}
 
-		/**
-		 * @todo: Set up localisation.
-		 */
-		// $this->load_plugin_textdomain();
+	/**
+	 * Load Localisation files.
+	 */
+	public function load_plugin_textdomain() {
+		if ( function_exists( 'determine_locale' ) ) {
+			$locale = determine_locale();
+		} else {
+			// @todo Remove when start supporting WP 5.0 or later.
+			$locale = is_admin() ? get_user_locale() : get_locale();
+		}
 
-		do_action( 'wp_plugin_boilerplate_init' );
+		$locale = apply_filters( 'plugin_locale', $locale, 'wp-plugin-boilerplate' );
+
+		unload_textdomain( 'wp-plugin-boilerplate' );
+		load_textdomain( 'wp-plugin-boilerplate', WP_LANG_DIR . '/wp-plugin-boilerplate/woocommerce-' . $locale . '.mo' );
+		load_plugin_textdomain( 'wp-plugin-boilerplate', false, plugin_basename( dirname( WPB_PLUGIN_FILE ) ) . '/i18n/languages' );
 	}
 
 	/**

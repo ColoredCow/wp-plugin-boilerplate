@@ -12,7 +12,7 @@
  * Plugin URI: https://github.com/abhishek-pokhriyal/wp-plugin-boilerplate
  * Author: ColoredCow
  * Author URI: https://coloredcow.com/
- * Version: 1.0.0
+ * Version: 1.2.0
  * Requires at least: 5.3
  * Requires PHP: 5.6
  * Text Domain: wp-plugin-boilerplate
