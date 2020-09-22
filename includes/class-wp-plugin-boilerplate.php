@@ -1,29 +1,31 @@
 <?php
 /**
- * WpPluginBoilerplate setup
+ * Class Wp_Plugin_Boilerplate
  *
- * @package WpPluginBoilerplate
- * @since   1.0.0
+ * @package   ColoredCow\WP_Plugin_Boilerplate
+ * @copyright 2020 ColoredCow
+ * @license   https://www.gnu.org/licenses/gpl-3.0-standalone.html GPL-3.0-or-later
+ * @link      https://github.com/abhishek-pokhriyal/wp-plugin-boilerplate
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Main WpPluginBoilerplate Class.
+ * Main Wp_Plugin_Boilerplate Class.
  *
- * @class WpPluginBoilerplate
+ * @class Wp_Plugin_Boilerplate
  */
-final class WpPluginBoilerplate {
+final class Wp_Plugin_Boilerplate {
 
 	/**
-	 * WpPluginBoilerplate version.
+	 * Wp_Plugin_Boilerplate version.
 	 *
 	 * @var string
 	 */
 	public $version = '1.0.0';
 
 	/**
-	 * WpPluginBoilerplate Schema version.
+	 * Wp_Plugin_Boilerplate Schema version.
 	 *
 	 * @since 1.0.0 started with version string 100.
 	 *
@@ -34,20 +36,20 @@ final class WpPluginBoilerplate {
 	/**
 	 * The single instance of the class.
 	 *
-	 * @var WpPluginBoilerplate
+	 * @var Wp_Plugin_Boilerplate
 	 * @since 1.0.0
 	 */
 	protected static $_instance = null;
 
 	/**
-	 * Main WpPluginBoilerplate Instance.
+	 * Main Wp_Plugin_Boilerplate Instance.
 	 *
-	 * Ensures only one instance of WpPluginBoilerplate is loaded or can be loaded.
+	 * Ensures only one instance of Wp_Plugin_Boilerplate is loaded or can be loaded.
 	 *
 	 * @since 1.0.0
 	 * @static
 	 * @see WPB()
-	 * @return WpPluginBoilerplate - Main instance.
+	 * @return Wp_Plugin_Boilerplate - Main instance.
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -57,7 +59,7 @@ final class WpPluginBoilerplate {
 	}
 
 	/**
-	 * WpPluginBoilerplate Constructor.
+	 * Wp_Plugin_Boilerplate Constructor.
 	 */
 	public function __construct() {
 		$this->define_constants();
