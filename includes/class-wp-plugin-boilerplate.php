@@ -154,6 +154,8 @@ final class Wp_Plugin_Boilerplate {
 		// Load Abstract classes.
 
 		// Load Core classes.
+		include_once WPB_ABSPATH . 'includes/class-wpb-install.php';
+		include_once WPB_ABSPATH . 'includes/class-wpb-shortcodes.php';
 
 		// Load Data stores - used to store and retrieve CRUD object data from the database.
 
