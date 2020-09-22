@@ -22,7 +22,7 @@ final class Wp_Plugin_Boilerplate {
 	 *
 	 * @var string
 	 */
-	public $version = '1.0.0';
+	public $version = '1.2.0';
 
 	/**
 	 * Wp_Plugin_Boilerplate Schema version.
@@ -31,7 +31,7 @@ final class Wp_Plugin_Boilerplate {
 	 *
 	 * @var string
 	 */
-	public $db_version = '100';
+	public $db_version = '120';
 
 	/**
 	 * The single instance of the class.
