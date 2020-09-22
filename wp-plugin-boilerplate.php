@@ -27,7 +27,7 @@ if ( ! defined( 'WPB_PLUGIN_FILE' ) ) {
 }
 
 // Include the main WpPluginBoilerplate class.
-if ( ! class_exists( 'WP_Plugin_Boilerplate', false ) ) {
+if ( ! class_exists( 'Wp_Plugin_Boilerplate', false ) ) {
 	include_once dirname( WPB_PLUGIN_FILE ) . '/includes/class-wp-plugin-boilerplate.php';
 }
 
@@ -35,10 +35,10 @@ if ( ! class_exists( 'WP_Plugin_Boilerplate', false ) ) {
  * Returns the main instance of WPB.
  *
  * @since  1.0
- * @return WP_Plugin_Boilerplate
+ * @return Wp_Plugin_Boilerplate
  */
 function WPB() {
-	return WP_Plugin_Boilerplate::instance();
+	return Wp_Plugin_Boilerplate::instance();
 }
 
 WPB();

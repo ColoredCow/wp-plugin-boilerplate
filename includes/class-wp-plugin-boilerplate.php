@@ -1,6 +1,6 @@
 <?php
 /**
- * Class WP_Plugin_Boilerplate
+ * Class Wp_Plugin_Boilerplate
  *
  * @package   ColoredCow\WP_Plugin_Boilerplate
  * @copyright 2020 ColoredCow
@@ -11,21 +11,21 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Main WP_Plugin_Boilerplate Class.
+ * Main Wp_Plugin_Boilerplate Class.
  *
- * @class WP_Plugin_Boilerplate
+ * @class Wp_Plugin_Boilerplate
  */
-final class WP_Plugin_Boilerplate {
+final class Wp_Plugin_Boilerplate {
 
 	/**
-	 * WP_Plugin_Boilerplate version.
+	 * Wp_Plugin_Boilerplate version.
 	 *
 	 * @var string
 	 */
 	public $version = '1.0.0';
 
 	/**
-	 * WP_Plugin_Boilerplate Schema version.
+	 * Wp_Plugin_Boilerplate Schema version.
 	 *
 	 * @since 1.0.0 started with version string 100.
 	 *
@@ -36,20 +36,20 @@ final class WP_Plugin_Boilerplate {
 	/**
 	 * The single instance of the class.
 	 *
-	 * @var WP_Plugin_Boilerplate
+	 * @var Wp_Plugin_Boilerplate
 	 * @since 1.0.0
 	 */
 	protected static $_instance = null;
 
 	/**
-	 * Main WP_Plugin_Boilerplate Instance.
+	 * Main Wp_Plugin_Boilerplate Instance.
 	 *
-	 * Ensures only one instance of WP_Plugin_Boilerplate is loaded or can be loaded.
+	 * Ensures only one instance of Wp_Plugin_Boilerplate is loaded or can be loaded.
 	 *
 	 * @since 1.0.0
 	 * @static
 	 * @see WPB()
-	 * @return WP_Plugin_Boilerplate - Main instance.
+	 * @return Wp_Plugin_Boilerplate - Main instance.
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -59,7 +59,7 @@ final class WP_Plugin_Boilerplate {
 	}
 
 	/**
-	 * WP_Plugin_Boilerplate Constructor.
+	 * Wp_Plugin_Boilerplate Constructor.
 	 */
 	public function __construct() {
 		$this->define_constants();
