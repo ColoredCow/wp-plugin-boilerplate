@@ -1,6 +1,6 @@
 # WP Plugin Boilerplate
 
-A boilerplate to create WordPress plugin with rapid assets compilation using Grunt. 
+A boilerplate to create WordPress plugin with rapid assets compilation using Grunt.
 
 ## Prerequisites
 
@@ -59,6 +59,7 @@ A boilerplate to create WordPress plugin with rapid assets compilation using Gru
 
 
 1. Follow [Build steps for assets](#build-steps-for-assets) if any assets development/changes are involved.
+1. If your plugin does not need Bootstrap, you can delete the `bootstrap` and `utilities` directory from the `assets/css` directory and remove all the import containing bootstrap from `style.scss` .
 1. Now, you're ready to get started for the development.
 
 ## Build steps for assets
@@ -84,6 +85,8 @@ A boilerplate to create WordPress plugin with rapid assets compilation using Gru
 ```
 +-- assets/
 |   +-- css/
+|       +-- bootstrap/
+|       +-- utilities/
 |   +-- js/
 |       +-- admin/
 |       +-- frontend/
