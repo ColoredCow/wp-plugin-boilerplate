@@ -1,0 +1,31 @@
+@media only screen and (min-width: 1200px) {
+	@each $size, $length in $sizes {
+		.w-xl-#{$size} {
+			width: $length !important;
+		}
+		.h-xl-#{$size} {
+			height: $length !important;
+		}
+	}
+
+	@each $name, $value in $sizes {
+		.border-bottom-#{$name} {
+			border-bottom-width: $value !important;
+		}
+		.border-left-#{$name} {
+			border-left-width: $value !important;
+		}
+		.border-right-#{$name} {
+			border-right-width: $value !important;
+		}
+		.border-top-#{$name} {
+			border-top-width: $value !important;
+		}
+	}
+
+	@each $name, $value in $sizes {
+		.border-width-#{$name} {
+			border-width: $value !important;
+		}
+	}
+}

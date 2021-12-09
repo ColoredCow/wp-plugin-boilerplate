@@ -37,8 +37,8 @@ if ( ! class_exists( 'Wp_Plugin_Boilerplate', false ) ) {
  * @since  1.0
  * @return Wp_Plugin_Boilerplate
  */
-function WPB() {
+function wpb() {
 	return Wp_Plugin_Boilerplate::instance();
 }
 
-WPB();
+wpb();

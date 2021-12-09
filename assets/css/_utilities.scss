@@ -1,0 +1,107 @@
+.c-pointer {
+	cursor: pointer;
+}
+
+.text-transform-none {
+	text-transform: none !important;
+}
+
+.text-decoration-none {
+	text-decoration: none;
+}
+
+.text-decoration-underline {
+	text-decoration: underline !important;
+}
+
+.border-none {
+	border: none !important;
+}
+
+.border-solid {
+	border: solid;
+}
+
+.disable-links {
+	pointer-events: none;
+}
+
+.bg-no-repeat {
+	background-repeat: no-repeat;
+}
+
+.bg-contain {
+	background-size: contain;
+}
+
+.bg-center {
+	background-position: center;
+}
+
+.box-shadow-none {
+	box-shadow: none;
+}
+
+.outline-none {
+	outline: none;
+}
+
+.disabled {
+	opacity: 0.3;
+}
+
+.border-dashed {
+	border-style: dashed;
+}
+
+@each $name, $value in $line-heights {
+	.leading-#{$name} {
+		line-height: $value;
+	}
+}
+
+@each $size, $value in $font-sizes {
+	.fz-#{$size} {
+		font-size: $value !important;
+	}
+}
+
+@each $name, $value in $rounded {
+	.rounded-#{$name} {
+		border-radius: $value !important;
+	}
+}
+
+@each $name, $value in $sizes {
+	.border-width-#{$name} {
+		border-width: $value !important;
+	}
+}
+
+@each $size, $length in $sizes {
+	.min-h-#{$size} {
+		min-height: $length;
+	}
+	.min-w-#{$size} {
+		min-width: $length;
+	}
+}
+
+@each $name, $value in $sizes {
+	.border-bottom-#{$name} {
+		border-bottom-width: $value !important;
+	}
+	.border-left-#{$name} {
+		border-left-width: $value !important;
+	}
+	.border-right-#{$name} {
+		border-right-width: $value !important;
+	}
+	.border-top-#{$name} {
+		border-top-width: $value !important;
+	}
+}
+
+@import 'utilities/md';
+@import 'utilities/xl';
+@import 'utilities/hd';

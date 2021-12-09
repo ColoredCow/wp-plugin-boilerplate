@@ -1,5 +1,5 @@
 === WP Plugin Boilerplate ===
-Contributors: coloredcow, abhishek-pokhriyal, gauravbhatt19
+Contributors: coloredcow, abhishek-pokhriyal, gauravbhatt19, kuldeep3
 Tags: ColoredCow, plugin boilerplate, plugin scaffolding, plugin development
 Requires at least: 5.0
 Tested up to: 5.4
