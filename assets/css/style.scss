@@ -1,0 +1,22 @@
+/*!
+Plugin Name: WP Plugin Boilerplate
+Author: ColoredCow
+Author URI: http://coloredcow.com
+Description: Official SASS for WP Plugin Boilerplate
+Version: 1.0.0
+Tags: boilerplate
+Text Domain: wp-plugin-boilerplate
+*/
+
+@import '_variables.scss';
+@import '_fonts.scss';
+
+//Required
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+//Optional
+@import 'bootstrap/utilities';
+
+@import '_utilities.scss';

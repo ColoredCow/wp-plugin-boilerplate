@@ -9,6 +9,10 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+define( 'WPB_PLUGIN_NAME', __( 'WP Plugin Boilerplate', 'wp-plugin-boilerplate' ) );
+
+// Use only if plugin has WooCommerce dependency.
+define( 'WPB_MIN_WC_VER', '5.7.1' );
 
 /**
  * Main Wp_Plugin_Boilerplate Class.
@@ -48,7 +52,7 @@ final class Wp_Plugin_Boilerplate {
 	 *
 	 * @since 1.0.0
 	 * @static
-	 * @see WPB()
+	 * @see wpb()
 	 * @return Wp_Plugin_Boilerplate - Main instance.
 	 */
 	public static function instance() {
@@ -74,9 +78,47 @@ final class Wp_Plugin_Boilerplate {
 	 */
 	private function init_hooks() {
 		register_activation_hook( WPB_PLUGIN_FILE, array( 'WPB_Install', 'install' ) );
+		register_deactivation_hook( WPB_PLUGIN_FILE, array( 'WPB_Deactivate', 'deactivate' ) );
 
 		add_action( 'init', array( $this, 'init' ), 0 );
 		add_action( 'init', array( 'WPB_Shortcodes', 'init' ) );
+		add_action( 'after_setup_theme', array( $this, 'include_template_functions' ), 20 );
+
+		// Use only if plugin has WooCommerce dependency.
+		add_action( 'plugins_loaded', array( __CLASS__, 'check' ), 8 );
+	}
+
+	/**
+	 * Checks if the plugin should load.
+	 *
+	 * @return bool
+	 */
+	public static function check() {
+		$passed = true;
+
+		$inactive_text = '<strong>' . sprintf( __( '%s is inactive.', 'wp-plugin-boilerplate' ), MFM_ATHLETES_NAME ) . '</strong>';
+
+		if ( ! self::is_woocommerce_version_ok() ) {
+			self::$errors[] = sprintf( __( '%1$s The plugin requires WooCommerce version %2$s or newer.', 'wp-plugin-boilerplate' ), $inactive_text, WPB_MIN_WC_VER );
+			$passed         = false;
+		}
+
+		return $passed;
+	}
+
+	/**
+	 * Checks if the installed WooCommerce version is ok.
+	 *
+	 * @return bool
+	 */
+	public static function is_woocommerce_version_ok() {
+		if ( ! function_exists( 'WC' ) ) {
+			return false;
+		}
+		if ( ! WPB_MIN_WC_VER ) {
+			return true;
+		}
+		return version_compare( WC()->version, WPB_MIN_WC_VER, '>=' );
 	}
 
 	/**
@@ -157,6 +199,10 @@ final class Wp_Plugin_Boilerplate {
 		// Load Core classes.
 		include_once WPB_ABSPATH . 'includes/class-wpb-install.php';
 		include_once WPB_ABSPATH . 'includes/class-wpb-shortcodes.php';
+		include_once WPB_ABSPATH . 'includes/class-wpb-deactivate.php';
+		include_once WPB_ABSPATH . 'includes/class-wpb-ajax.php';
+		include_once WPB_ABSPATH . 'includes/class-wpb-post-types.php';
+		include_once WPB_ABSPATH . 'includes/wpb-functions.php';
 
 		// Load Data stores - used to store and retrieve CRUD object data from the database.
 

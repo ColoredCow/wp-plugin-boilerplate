@@ -1,0 +1,10 @@
+@media only screen and (min-width: 768px) {
+	@each $size, $length in $sizes {
+		.w-md-#{$size} {
+			width: $length !important;
+		}
+		.h-md-#{$size} {
+			height: $length !important;
+		}
+	}
+}
